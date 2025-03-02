@@ -14,7 +14,7 @@ This project compares three different approaches to solving the **0/1 Knapsack P
 - Analyze their **computational complexity, execution time, and solution quality**.  
 - Evaluate the trade-offs between **speed and optimality** in solving the knapsack problem.  
 
-## 📌 Repository Structure  
+## Repository Structure  
 
 ```
 knapsack-algo-comparison/
@@ -27,12 +27,17 @@ knapsack-algo-comparison/
 └── docs/ → Documentation and analysis
 ```
 
-## 📌 Usage  
+## Usage  
 ```sh
 # Compile the project
 make
+./knapsack
+```
 
 # Run tests
+```sh
+make test
 ./knapsack_test
+```
 
 # Analyze performance results
