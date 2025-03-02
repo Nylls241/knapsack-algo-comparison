@@ -9,10 +9,11 @@ This project compares three different approaches to solving the **0/1 Knapsack P
 2. **Dynamic Programming** – Uses memoization to ensure an optimal solution at the cost of higher computational complexity.  
 3. **Branch & Bound** – Explores solution space efficiently by eliminating non-promising subsets, often achieving optimality with better performance than dynamic programming.  
 
-## 📌 Project Objectives  
+## Project Objectives  
 - Implement and compare these three algorithms in **C++**.  
 - Analyze their **computational complexity, execution time, and solution quality**.  
 - Evaluate the trade-offs between **speed and optimality** in solving the knapsack problem.  
+- Highlight the importance of **algorithm selection** in problem-solving, demonstrating how different approaches impact efficiency and optimality in the knapsack problem.    
 
 ## Repository Structure  
 
