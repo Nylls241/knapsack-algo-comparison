@@ -37,4 +37,7 @@ void readItems(std::vector<Item>& items, int& W);
  */
 void printItems(const std::vector<Item>& items, int W);
 
+// Greedy algorithm 
+
+
 #endif // KNAPSACK_H
