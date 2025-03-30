@@ -2,7 +2,6 @@
  * @file main.cpp
  * @brief Main entry point for the knapsack problem application
  * @author Nylls Boutoto
- * @date 2025-03-02
  */
 
 #include <iostream>
@@ -28,5 +27,15 @@ int main() {
     // Display items for verification
     printItems(items, W);
     
+     // Solve the problem using the greedy algorithm
+    auto [solution, totalValue] = greedyKnapsack(items, W);
+
+    // Display the results
+    std::cout << "Selected items: ";
+    for (int selected : solution) {
+        std::cout << selected << " ";
+    }
+    std::cout << "\nTotal value: " << totalValue << std::endl;
+
     return 0;
 }

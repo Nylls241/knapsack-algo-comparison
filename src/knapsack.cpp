@@ -2,11 +2,9 @@
  * @file knapsack.cpp
  * @brief Implementation of knapsack problem utilities
  * @author Nylls Boutoto
- * @date 2025-03-02
  */
 
 #include <iostream>
-#include <vector>
 #include "../include/knapsack.h"
 
 using namespace std;
