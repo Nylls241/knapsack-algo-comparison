@@ -37,4 +37,15 @@ void readItems(std::vector<Item>& items, int& W);
  */
 void printItems(const std::vector<Item>& items, int W);
 
+// Greedy algorithm 
+
+/**
+ * @brief Solves the knapsack problem using the greedy algorithm
+ * 
+ * @param[in] items Vector of items (value, weight)
+ * @param[in] capacity Knapsack capacity
+ * @return A pair containing the binary selection vector and the total value
+ */
+std::pair<std::vector<int>, int> greedyKnapsack(const std::vector<Item>& items, int capacity);
+
 #endif // KNAPSACK_H
