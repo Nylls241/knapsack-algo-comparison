@@ -5,7 +5,7 @@ CC = g++
 CFLAGS = -Wall -std=c++17
 
 # Source files for the main application
-SRC = src/main.cpp src/knapsack.cpp
+SRC = src/main.cpp src/knapsack.cpp src/greedy.cpp
 
 # Source files for the test application
 TEST_SRC = tests/test_knapsack.cpp src/knapsack.cpp
