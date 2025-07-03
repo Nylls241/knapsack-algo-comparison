@@ -4,10 +4,16 @@
 The **Knapsack Problem** is a well-known combinatorial optimization problem. Given a set of items, each with a **weight** and a **value**, the goal is to maximize the total value while staying within a given weight capacity. This problem models various real-world scenarios such as **investment optimization, resource allocation, and storage management**.  
 
 ## 📌 Algorithms Studied  
-This project compares three different approaches to solving the **0/1 Knapsack Problem**:  
-1. **Greedy Algorithm** – Selects items based on a local criterion (e.g., highest value-to-weight ratio). It is fast but does not guarantee an optimal solution.  
-2. **Dynamic Programming** – Uses memoization to ensure an optimal solution at the cost of higher computational complexity.  
-3. **Branch & Bound** – Explores solution space efficiently by eliminating non-promising subsets, often achieving optimality with better performance than dynamic programming.  
+This project focuses on three algorithmic approaches to solving the 0/1 Knapsack Problem, each representing a different strategy in problem-solving:
+
+    Greedy Algorithm
+    This method selects items based on a simple heuristic, such as the highest value-to-weight ratio. It is straightforward to implement and fast, making it useful for large-scale instances.
+
+    Dynamic Programming (DP)
+    This approach solves the problem optimally by breaking it into subproblems and storing intermediate results (memoization). It is particularly effective for small to moderate input sizes.
+
+    Branch and Bound
+    This method systematically explores the solution space using upper bounds to eliminate non-promising branches. It aims to combine optimality with improved efficiency in certain cases.
 
 ## Project Objectives  
 - Implement and compare these three algorithms in **C++**.  
