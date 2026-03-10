@@ -5,6 +5,7 @@
  */
 
 #include <iostream>
+//#include <vector>
 #include "../include/knapsack.h"
 
 using namespace std;
@@ -18,24 +19,30 @@ using namespace std;
  * @return int Exit status (0 for success)
  */
 int main() {
+
     vector<Item> items;
     int W;
-    
-    // Read data from user input
-    readItems(items, W);
-    
-    // Display items for verification
-    printItems(items, W);
-    
-     // Solve the problem using the greedy algorithm
-    auto [solution, totalValue] = greedyKnapsack(items, W);
 
-    // Display the results
-    std::cout << "Selected items: ";
-    for (int selected : solution) {
-        std::cout << selected << " ";
-    }
-    std::cout << "\nTotal value: " << totalValue << std::endl;
+    // Read input data
+    readItems(items, W);
+
+    // Display items
+    printItems(items, W);
+
+    int n = items.size();
+
+    // Memoization table for recursive version
+    vector<vector<int>> memo(n + 1, vector<int>(W + 1, -1));
+
+    // Solve using recursive dynamic programming
+    int recursiveResult = knapsackRecursive(items, n, W, memo);
+
+    cout << "\nResult using recursive DP: " << recursiveResult << endl;
+
+    // Solve using iterative dynamic programming
+    int iterativeResult = knapsackIterative(items, W);
+
+    cout << "Result using iterative DP: " << iterativeResult << endl;
 
     return 0;
 }

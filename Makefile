@@ -1,43 +1,35 @@
-# Compiler definition
-CC = g++
+# Compiler
+CXX = g++
 
-# Compiler flags: enable all warnings and use C++17 standard
-CFLAGS = -Wall -std=c++17
+# Compiler flags
+CXXFLAGS = -Wall -Wextra -std=c++17
 
-# Source files for the main application
-SRC = src/main.cpp src/knapsack.cpp src/greedy.cpp
+# Executables
+MAIN_EXEC = knapsack
+TEST_EXEC = knapsack_test
 
-# Source files for the test application
-TEST_SRC = tests/test_knapsack.cpp src/knapsack.cpp
+# Sources
+MAIN_SRC = src/main.cpp src/knapsack.cpp src/knapsack_resolution.cpp
+TEST_SRC = src/experiment.cpp tests/experiment_tests.cpp src/knapsack.cpp src/knapsack_resolution.cpp
 
-# Include directory path
-INCLUDE = -Iinclude
+# Default target
+all: $(MAIN_EXEC) $(TEST_EXEC)
 
-# Output executable name for the main application
-OUTPUT = knapsack
+# Main program
+$(MAIN_EXEC):
+	$(CXX) $(CXXFLAGS) $(MAIN_SRC) -o $(MAIN_EXEC)
 
-# Output executable name for the test application
-TEST_OUTPUT = knapsack_test
+# Test program
+$(TEST_EXEC):
+	$(CXX) $(CXXFLAGS) $(TEST_SRC) -o $(TEST_EXEC)
 
-# Default target: build both main application and tests
-all: $(OUTPUT) $(TEST_OUTPUT)
-
-# Compile the main application
-$(OUTPUT): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) $(INCLUDE) -o $(OUTPUT)
-
-# Compile the test application
-$(TEST_OUTPUT): $(TEST_SRC)
-	$(CC) $(CFLAGS) $(TEST_SRC) $(INCLUDE) -o $(TEST_OUTPUT)
-
-# Target to run the main application
-run: $(OUTPUT)
-	./$(OUTPUT)
-
-# Target to run the test suite
-test: $(TEST_OUTPUT)
-	./$(TEST_OUTPUT)
-
-# Target to clean compiled executables
+# Clean build files
 clean:
-	rm -f $(OUTPUT) $(TEST_OUTPUT)
+	rm -f $(MAIN_EXEC) $(TEST_EXEC)
+
+# Run helpers
+run: $(MAIN_EXEC)
+	./$(MAIN_EXEC)
+
+test: $(TEST_EXEC)
+	./$(TEST_EXEC)

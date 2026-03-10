@@ -37,15 +37,38 @@ void readItems(std::vector<Item>& items, int& W);
  */
 void printItems(const std::vector<Item>& items, int W);
 
-// Greedy algorithm 
 
+// Dynamic Prog (Rec)
 /**
- * @brief Solves the knapsack problem using the greedy algorithm
- * 
- * @param[in] items Vector of items (value, weight)
- * @param[in] capacity Knapsack capacity
- * @return A pair containing the binary selection vector and the total value
+ * @brief Recursive knapsack solver with memoization
+ *
+ * Computes the optimal value using the first i items
+ * with a remaining capacity W.
+ *
+ * @param items Vector of items
+ * @param i Number of items considered
+ * @param W Remaining capacity
+ * @param memo Memoization table
+ * @return Maximum achievable value
  */
-std::pair<std::vector<int>, int> greedyKnapsack(const std::vector<Item>& items, int capacity);
+int knapsackRecursive(
+    const std::vector<Item>& items,
+    int i,
+    int W,
+    std::vector<std::vector<int>>& memo
+);
+
+// Dynamic Prog (Iter)
+/**
+ * @brief Iterative knapsack solver using dynamic programming
+ *
+ * Computes the maximum achievable value of a knapsack problem
+ * iteratively using DP table.
+ *
+ * @param items Vector of items
+ * @param capacity Maximum capacity of the knapsack
+ * @return Maximum achievable value
+ */
+int knapsackIterative(const std::vector<Item>& items, int capacity);
 
 #endif // KNAPSACK_H
